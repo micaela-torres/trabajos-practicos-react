@@ -1,14 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import NavBar from './NavBar/NavBar';
+import NavBar from './Componentes/NavBar';
+import { ItemListContainer } from './Componentes/ItemListContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar></NavBar>
-        <h1>Trabajo numero 2</h1>
-      </header>
+    <div>
+      <NavBar></NavBar>
+      <ItemListContainer symart={"Bienvenidos a la distribuidora Symart"} />
     </div>
   );
 }
