@@ -1,5 +1,5 @@
-import React from "react";
 import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
 
 
 const ItemListContainer = ({ symart }) => {
@@ -9,6 +9,9 @@ const ItemListContainer = ({ symart }) => {
             <h1>{symart}</h1>
             <div>
                 <ItemCount stock="15" onAdd={(contador) => alert(`Usted añadio ${contador} producto`)} />
+            </div>
+            <div>
+                <ItemList />
             </div>
         </div>
 
