@@ -1,25 +1,39 @@
 import Item from "./Item";
+import productos from "../productos.json"
 import { useEffect } from "react";
-import { useState } from "react";
-import { productos } from "../productos.json"
 
-const getProductos = () => {
-    const task = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productos)
-        }, 2000)
-    });
-    return task;
-}
+
 
 const ItemList = () => {
-    const [Productos, setProductos] = useState([]);
+
     useEffect(() => {
-        getProductos().then(response => {
-            setProductos(response)
-        })
-    }, [])
-    return Productos.map(item => <Item item={item} key={item.id} />)
+        const task = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(productos);
+            })
+        });
+
+        task.then(productos);
+    }, []);
+
+    return (
+        <div>
+            {
+                productos.map((productos) => {
+                    return <Item
+                        key={productos.codigo}
+                        nombre={productos.producto}
+                        descripcion={productos.descripcion}
+                        marca={productos.marca}
+                        precio={productos.precio}
+                    />
+
+
+                })
+            }
+        </div>
+    )
+
 }
 
 export default ItemList
