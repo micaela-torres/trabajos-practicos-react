@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function ItemDetail({ codigo, nombre, descripcion, precio }) {
+function ItemDetail({ codigo, nombre, precio }) {
 
     const [show, setShow] = useState(false);
 
@@ -12,23 +12,23 @@ function ItemDetail({ codigo, nombre, descripcion, precio }) {
 
     return (
         <>
-            <Button className='m-1' variant="primary" onClick={handleShow}>
-                detalle
+            <Button variant="outline-info" onClick={handleShow}>
+                Descripcion
             </Button>
 
             <Modal show={show} id={codigo} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title className='h5'>{nombre}</Modal.Title>
-                    <Modal.Title className='mx-4 h4'>  ${precio}</Modal.Title>
+                    <Modal.Title className='h5'>Producto: {nombre}</Modal.Title>
+                    <Modal.Title className='mx-4 h4'>Precio: ${precio}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img className='imgTam' src={descripcion}></img>
+                    <img></img>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button className='' variant="secondary" onClick={handleClose}>
                         Cerrar
                     </Button>
-                    <Button className='' variant="primary" onClick={handleClose}>
+                    <Button variant="outline-info" onClick={handleClose}>
                         comprar
                     </Button>
                 </Modal.Footer>

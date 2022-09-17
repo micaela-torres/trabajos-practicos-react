@@ -1,15 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import NavBar from './Componentes/NavBar';
-import ItemListContainer from './Componentes/ItemListContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './app/Layout';
+import Contacto from './pag/Contacto';
 
 
 function App() {
   return (
-    <div>
-      <NavBar></NavBar>
-      <ItemListContainer symart={"Bienvenidos a la distribuidora Symart"} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/contacto" element={<Contacto />}></Route>
+        </Route>
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

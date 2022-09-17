@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-import ItemCount from "../Componentes/ItemCount"
+
 
 const Item = (props) => {
     return (
@@ -15,10 +15,6 @@ const Item = (props) => {
                 <Card.Footer>
                     <small className="text-muted">{props.marca}</small>
                 </Card.Footer>
-                <div>
-                    <ItemCount stock="15" onAdd={(contador) => alert(`Usted añadio ${contador} producto`)} />
-
-                </div>
             </Card>
 
         </CardGroup>
