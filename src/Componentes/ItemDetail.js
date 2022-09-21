@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import ItemCount from './ItemCount';
 
 function ItemDetail({ codigo, nombre, precio }) {
 
@@ -31,6 +32,7 @@ function ItemDetail({ codigo, nombre, precio }) {
                     <Button variant="outline-info" onClick={handleClose}>
                         comprar
                     </Button>
+                    <ItemCount stock="15" onAdd={(contador) => alert(`Usted añadio ${contador} producto`)} />
                 </Modal.Footer>
             </Modal>
         </>

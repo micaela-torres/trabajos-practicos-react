@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CartWidget } from './CartWidget';
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 
 function NavBar() {
@@ -11,12 +11,25 @@ function NavBar() {
             <Navbar bg="light" variant="light">
                 <Container>
                     <img src="../img/logo-color.png" alt="" width={150} />
-                    <Nav className="me-auto">
-                        <Nav.Link><Link to="/">Inicio</Link>Inicio</Nav.Link>
-                        <Nav.Link><Link to="/productos"></Link>Productos</Nav.Link>
-                        <Nav.Link><Link to="/contacto"></Link>Contacto</Nav.Link>
-                        <CartWidget />
-                    </Nav>
+                    <ul>
+                        <Nav className="me-auto">
+                            <li>
+                                <NavLink to="/">Productos</NavLink>
+                                <li>
+                                    <NavLink to="/categoria/Algabo">Algabo</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/categoria/Iberia">Iberia</NavLink>
+                                </li>
+                            </li>
+                            <li>
+                                <NavLink to="/contacto">Contacto</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/carrito"><CartWidget /></NavLink>
+                            </li>
+                        </Nav>
+                    </ul>
                 </Container>
             </Navbar>
 

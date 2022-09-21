@@ -2,20 +2,27 @@ import Item from "./Item";
 import productos from "../productos.json";
 import { useEffect } from "react";
 import ItemDetail from "../Componentes/ItemDetail";
-import ItemCount from "../Componentes/ItemCount";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 
 const ItemList = () => {
+    const [data, setData] = useState([]);
 
+    const { marcaid } = useParams();
     useEffect(() => {
-        const task = new Promise((resolve, reject) => {
+        const data = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(productos);
             })
         });
+        if (marcaid) {
+            data.then(res => setData(res.filter(Algabo => Algabo.marca === marcaid)));
+        } else {
+            data.then(res => setData(res));
+        }
 
-        task.then(productos);
-    }, []);
+    }, [marcaid]);
 
     return (
         <div>
@@ -32,7 +39,7 @@ const ItemList = () => {
                             />
 
                             <ItemDetail id={productos.codigo} nombre={productos.producto} precio={productos.precio} />
-                            <ItemCount stock="15" onAdd={(contador) => alert(`Usted añadio ${contador} producto`)} />
+
                         </>
                     )
 

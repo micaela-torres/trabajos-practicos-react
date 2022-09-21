@@ -96,5 +96,19 @@
         "descripcion": "Pack con tapa por 100 unidades.",
         "marca": "Algabo",
         "precio": 540
+    },
+    {
+        "codigo": 6623,
+        "producto": "Turbo Matic",
+        "descripcion": "Balde.",
+        "marca": "Iberia",
+        "precio": 5390
+    },
+    {
+        "codigo": 6722,
+        "producto": "Magic mop",
+        "descripcion": "Mopa.",
+        "marca": "Iberia",
+        "precio": 5289
     }
 ]
