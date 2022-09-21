@@ -1,9 +1,9 @@
 import Item from "./Item";
 import productos from "../productos.json";
 import { useEffect } from "react";
-import ItemDetail from "../Componentes/ItemDetail";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+
 
 
 const ItemList = () => {
@@ -37,8 +37,6 @@ const ItemList = () => {
                                 marca={productos.marca}
                                 precio={productos.precio}
                             />
-
-                            <ItemDetail id={productos.codigo} nombre={productos.producto} precio={productos.precio} />
 
                         </>
                     )
