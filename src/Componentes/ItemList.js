@@ -4,14 +4,15 @@ const ItemList = ({ props }) => {
     return (
         <div>
             {
-                props.map((props) => {
+
+                props.map((item) => {
                     return <Item
-                        key={props.codigo}
-                        nombre={props.producto}
-                        precio={props.precio}
-                        detalles={props.detalles}
+                        key={item.codigo}
+                        product={item}
+
                     />
                 })
+
             }
 
         </div>

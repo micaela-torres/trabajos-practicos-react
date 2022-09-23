@@ -14,6 +14,7 @@ const Routers = () => (
             <NavBar></NavBar>
             <Routes>
                 <Route path="/" element={<Layout />}></Route>
+                <Route path="/:id" element={<Layout />}></Route>
                 <Route path="/categoria/:marcaid" element={<ItemListContainer />}></Route>
                 <Route path="/contacto" element={<Contacto />}></Route>
                 <Route path="/carrito" element={<CartWidget />}></Route>

@@ -3,20 +3,20 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import { Link } from 'react-router-dom';
 
 
-const Item = (props) => {
+const Item = (product) => {
     return (
-        <Link to={`/categoria/${props.codigo}`}>
+        <Link to={`/${product.codigo}`}>
 
             <CardGroup className="row">
-                <Card key={props.codigo}>
-                    <Card.Img variant="top" src={props.codigo} />
+                <Card >
+                    <Card.Img variant="top" src={product.codigo} />
                     <Card.Body>
-                        <Card.Title>{props.nombre}</Card.Title>
-                        <Card.Text>{props.descripcion}</Card.Text>
-                        <Card.Text>${props.precio}</Card.Text>
+                        <Card.Title>{product.nombre}</Card.Title>
+                        <Card.Text>{product.descripcion}</Card.Text>
+                        <Card.Text>${product.precio}</Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">{props.marca}</small>
+                        <small className="text-muted">{product.marca}</small>
                     </Card.Footer>
                 </Card>
             </CardGroup >

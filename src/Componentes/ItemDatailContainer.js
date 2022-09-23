@@ -17,7 +17,7 @@ const ItemDatailContainer = () => {
     }, [])
     return (
         <>
-            <ItemDetail props={details} />
+            <ItemDetail details={details} />
         </>
 
     )
